@@ -7,9 +7,9 @@ def cpf_invalido(cpf):
     return not cpf_valido
 
 def nome_invalido(nome):
-    return not nome.isalpha()
+    return not nome.replace(' ', '').isalpha()
 
 def celular_invalido(celular):
-    modelo = '[0-9]{2} [0-9]{5}-[0-9][4]'
+    modelo = '[0-9]{2} [0-9]{5}-[0-9]{4}'
     celularOk = re.findall(modelo, celular)
     return not celularOk
